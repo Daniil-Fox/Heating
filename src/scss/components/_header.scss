@@ -1,0 +1,163 @@
+.header {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include mobile {
+    border-bottom: 0.1rem solid #fff;
+
+  }
+
+
+  &__logo {
+    padding: 0 6.2rem;
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      margin: 0;
+    }
+
+    @include mobile {
+      height: 100%;
+      padding: 0;
+      flex: 1;
+      border-bottom: none;
+      border-right: 0.1rem solid #fff;
+    }
+  }
+
+  &__container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    @include mobile {
+      height: 6rem;
+      align-items: center;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__row {
+    display: flex;
+    border-left: 0.1rem solid rgba(255, 255, 255, 0.50);
+
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.50);
+
+  }
+
+  &__list {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    padding: 1.1rem 0.4rem;
+    margin-right: 6.2rem;
+  }
+
+  &__item {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__phone {
+    font-size: 1.4rem;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &__link {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__nav {
+    flex: 1;
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 2.9rem;
+  }
+
+  &__call {
+    display: inline-block;
+    margin-right: 0.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.1rem solid #fff;
+    color: #fff;
+
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      fill: #fff;
+    }
+
+  }
+
+  &__contact {
+    display: none;
+    color: #FFF;
+    font-family: "Roboto";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    border-right: 0.1rem solid #fff;
+    height: 100%;
+
+    a {
+      color: inherit;
+    }
+
+    @include mobile {
+      display: flex;
+    }
+  }
+
+  &__burger {
+    display: none;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      display: flex;
+    }
+  }
+}

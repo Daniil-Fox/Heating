@@ -1,0 +1,89 @@
+.partners {
+  &__title {
+    display: flex;
+    align-items: center;
+    height: 15rem;
+    width: 100%;
+    max-width: 130rem;
+
+    margin: 0;
+    margin-bottom: 3rem;
+
+
+    padding-left: 12rem;
+
+    position: relative;
+    z-index: 2;
+
+    color: #fff;
+    font-family: "Oswald";
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+
+    @include mobile {
+      height: unset;
+      font-size: 4rem;
+      padding-left: unset;
+      width: 100%;
+      margin-bottom: 10rem;
+    }
+
+    &::before {
+      content: "Наши партнеры";
+      position: absolute;
+      white-space: nowrap;
+      z-index: -1;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      color: rgba(255, 255, 255, 0.05);
+      leading-trim: both;
+      text-edge: cap;
+      font-family: "Oswald";
+      font-size: 18.5rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      text-transform: uppercase;
+
+      @include mobile {
+        font-size: 6.4rem;
+        top: 25%;
+        transform: translate(0, -75%);
+        margin-left: -1.6rem;
+      }
+    }
+  }
+
+  &__slider {
+    border-top: 0.1rem solid #FFF;
+    border-bottom: 0.1rem solid #FFF;
+    cursor: grab;
+
+    .swiper-slide {
+      width: auto;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 50rem;
+    padding: 3rem 5rem;
+
+    img {
+      height: 5rem;
+    }
+
+    @include mobile {
+      padding-right: 0;
+      padding-left: 0;
+      width: 31.7rem;
+    }
+  }
+}

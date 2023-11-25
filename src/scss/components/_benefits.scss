@@ -1,0 +1,283 @@
+.benefits {
+  padding-top: 6rem;
+  min-height: 100vh;
+
+  &__slider-wrapper {
+    width: 100%;
+  }
+
+  &__slider {
+    display: none;
+    height: 25.5rem;
+
+    .swiper-slide {
+      width: auto;
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__slider-control {
+    display: none;
+
+
+    padding-top: 2.5rem;
+    padding-bottom: 6.1rem;
+
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+
+    @include mobile {
+      display: flex;
+    }
+
+    .benefits-button-prev,
+    .benefits-button-next {
+      position: relative;
+      width: 1.8rem;
+      height: 1.8rem;
+      transform: rotate(45deg);
+    }
+
+    .benefits-button-prev {
+      border-left: 0.2rem solid #183475;
+      border-bottom: 0.2rem solid #183475;
+    }
+
+    .benefits-button-next {
+      border-top: 0.2rem solid #183475;
+      border-right: 0.2rem solid #183475;
+    }
+
+    .benefits-pagination {
+      width: unset;
+      color: #183475;
+      font-family: "Oswald";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__row {
+    height: 100%;
+    padding-left: 37rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    transition: linear;
+    will-change: transform;
+    counter-reset: counter 0;
+
+    @include mobile {
+      padding-left: unset;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  &__items {
+    display: flex;
+    gap: 0 2rem;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__header {
+    position: relative;
+    max-width: 80rem;
+    flex-shrink: 0;
+    margin-right: 4rem;
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      text-align: center;
+      flex-shrink: 1;
+      padding: 0 1.5rem;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 7rem;
+    position: relative;
+    z-index: 2;
+    color: #403D3A;
+    font-family: "Oswald";
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+    text-align: left;
+
+    @include mobile {
+      margin-bottom: 0;
+    }
+
+    &::after {
+      content: "Преимущества";
+      position: absolute;
+      z-index: -1;
+      left: 175%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: rgba(24, 52, 117, 0.05);
+      leading-trim: both;
+      text-edge: cap;
+      font-family: "Oswald";
+      font-size: 18.5rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: uppercase;
+
+      @include mobile {
+        display: block;
+        font-size: 6.4rem;
+        left: 0;
+        top: 0;
+        margin-left: -1.5rem;
+        padding-top: 7.55rem;
+        padding-bottom: 10.9rem;
+        position: relative;
+        transform: unset;
+
+      }
+    }
+  }
+
+  &__heater {
+    position: absolute;
+    bottom: 0;
+    max-width: 43.4rem;
+    left: 0;
+    transform: translate(-25%, 50%);
+
+    img {
+      width: 100%;
+    }
+
+    @include mobile {
+      position: relative;
+      transform: translate(0, 5%);
+      order: 4;
+    }
+  }
+
+  &__btn {
+    width: 25rem;
+    align-self: flex-end;
+    margin-right: 19rem;
+
+    @include mobile {
+      margin-right: unset;
+      align-self: center;
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    margin-bottom: 8rem;
+    color: #403D3A;
+    font-family: "Roboto";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+
+    @include mobile {
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+
+.benefit {
+  counter-increment: counter;
+  width: 46rem;
+  height: 25.6rem;
+  padding: 5.8rem 3.3rem;
+  box-shadow: 0.8rem 0.6rem 1rem 0rem rgba(0, 0, 0, 0.35);
+  position: relative;
+
+  @include mobile {
+    padding: 0;
+    width: 100%;
+  }
+
+  &::after {
+    content: counter(counter);
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgba(24, 52, 117, 0.03);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "Oswald";
+    font-size: 18.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.75;
+    text-transform: uppercase;
+
+    @include mobile {}
+  }
+
+  &>p {
+    margin: 0;
+
+    font-family: "Roboto";
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #403D3A;
+
+    @include mobile {
+      padding: 3.853rem;
+      padding-left: 3.4rem;
+      padding-right: 2.8rem;
+    }
+  }
+
+  &--blue {
+    background: #183475;
+
+    &::after {
+      color: rgba(255, 255, 255, 0.1);
+    }
+
+    &>p {
+      color: #FFF;
+    }
+  }
+
+  &--dark {
+    background: #403D3A;
+
+    &::after {
+      color: rgba(255, 255, 255, 0.1);
+    }
+
+
+    &>p {
+      color: #FFF;
+    }
+  }
+}

@@ -1,0 +1,266 @@
+.reliability {
+  padding-top: 17rem;
+  padding-bottom: 16rem;
+  background-color: #183475;
+
+  @include mobile {
+    padding-top: 14.5rem;
+  }
+
+  &__advs {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    margin-bottom: 7.5rem;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 12rem;
+      margin-bottom: 11rem;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 5;
+    margin: 0;
+    margin-bottom: 20rem;
+    color: #FFF;
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+
+    text-shadow: 0.8rem 0.6rem 1rem rgba(0, 0, 0, 0.35);
+    font-family: "Oswald";
+    font-size: 12.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 6.4rem;
+      margin-bottom: 25.5rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20rem;
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.rel-item {
+  width: 25rem;
+  text-align: left;
+  position: relative;
+
+  @include mobile {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: #FFF;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "Oswald";
+    font-size: 6.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+
+    &::after {
+      content: '';
+      display: block;
+      margin: 1.3rem 0;
+      width: 100%;
+      height: 0.1rem;
+      background-color: #fff;
+    }
+
+
+  }
+
+  &__text {
+    margin: 0;
+    color: #FFF;
+    font-family: "Roboto";
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+
+.rel-advs {
+  &__list {
+    grid-column: 7 span;
+    margin-right: -2rem;
+
+    @include mobile {
+      grid-column: 1 span;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    padding-left: 25rem;
+
+    @include mobile {
+      padding-left: 12.5rem;
+    }
+
+    &:nth-child(even) {
+      padding-left: 15rem;
+
+      @include mobile {
+        padding-left: 7rem;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    position: relative;
+    margin: 0;
+    margin-bottom: 1rem;
+    color: #FFF;
+    font-family: "Oswald";
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 2.4rem;
+    }
+
+    &::before {
+      content: '';
+      flex-grow: 1;
+      display: block;
+      position: absolute;
+      left: -100%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 0.1rem;
+      background-color: #fff;
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    color: #FFF;
+    font-family: "Roboto";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__images {
+    grid-column: 5 span;
+    margin-left: 7rem;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    height: 60.5rem;
+    max-width: 45.3rem;
+
+    @include mobile {
+      grid-column: 1 span;
+      order: -1;
+      height: 37.3rem;
+      max-width: 27.9rem;
+      margin-left: unset;
+      margin: 0 auto;
+    }
+  }
+
+  &__img {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+
+    &:nth-child(1) {
+      left: 0;
+      top: 0;
+      z-index: 2;
+
+      box-shadow: 0.8rem 0.6rem 1rem 0rem rgba(0, 0, 0, 0.35);
+    }
+
+    &:nth-child(2) {
+      top: 6rem;
+      right: -6rem;
+      z-index: 1;
+
+      @include mobile {
+        top: 3.7rem;
+        right: -3.7rem;
+      }
+    }
+  }
+}
+
+.rel-first-det,
+.rel-second-det,
+.rel-third-det {
+  width: 15.1rem;
+  height: 15.1rem;
+  position: absolute;
+  z-index: -1;
+}
+
+.rel-first-det {
+  left: 5%;
+  bottom: -35%;
+
+  @include mobile {
+    left: -15%;
+    bottom: -70%;
+  }
+}
+
+.rel-second-det {
+  left: 60%;
+  top: -35%;
+
+  @include mobile {
+    left: 30%;
+  }
+}
+
+.rel-third-det {
+  right: 8%;
+  bottom: -10%;
+  width: 8.1rem;
+  height: 10.8rem;
+
+  @include mobile {
+    bottom: -100%;
+    right: -10%;
+  }
+}
