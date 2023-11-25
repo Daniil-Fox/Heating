@@ -163,12 +163,16 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 const benefitsRow = document.querySelector('.benefits__row');
-if (window.matchMedia('(min-width: 769px)').matches) {
-  const tween = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(benefitsRow, {
+function onResize() {
+  gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.refresh(true);
+  gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.update();
+}
+let tween = null;
+let mm = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.matchMedia();
+mm.add("(min-width: 769px)", () => {
+  tween = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(benefitsRow, {
     x: () => -(document.querySelector('.benefits__row').scrollWidth - window.innerWidth)
-    // duration: 3,
   });
-
   gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
     trigger: '.benefits',
     start: 'center center',
@@ -178,13 +182,11 @@ if (window.matchMedia('(min-width: 769px)').matches) {
     scrub: 2,
     invalidateOnRefresh: true
   });
-  function onResize() {
-    gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.refresh(true);
-    gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.update();
-  }
   gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.addEventListener("refreshInit", onResize);
-  window.addEventListener('resize', onResize);
-}
+});
+window.addEventListener('resize', () => {
+  onResize();
+});
 
 /***/ }),
 
@@ -214,23 +216,27 @@ const partnersSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]
     }
   }
 });
-if (window.matchMedia('(max-width: 768px)').matches) {
-  const benefitsSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.benefits__slider', {
-    slidesPerView: 1,
-    pagination: {
-      el: '.benefits-pagination',
-      type: "custom",
-      renderCustom: function (swiper, current, total) {
-        return current.toString().padStart(2, "0") + ' - ' + total.toString().padStart(2, "0");
+const initSlider = () => {
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    const benefitsSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.benefits__slider', {
+      slidesPerView: 1,
+      pagination: {
+        el: '.benefits-pagination',
+        type: "custom",
+        renderCustom: function (swiper, current, total) {
+          return current.toString().padStart(2, "0") + ' - ' + total.toString().padStart(2, "0");
+        }
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: '.benefits-button-next',
+        prevEl: '.benefits-button-prev'
       }
-    },
-    // Navigation arrows
-    navigation: {
-      nextEl: '.benefits-button-next',
-      prevEl: '.benefits-button-prev'
-    }
-  });
-}
+    });
+  }
+};
+window.addEventListener('resize', initSlider);
+initSlider();
 
 /***/ }),
 

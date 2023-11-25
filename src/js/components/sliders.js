@@ -16,22 +16,26 @@ const partnersSlider = new Swiper('.partners__slider', {
     }
   }
 })
+const initSlider = () => {
+  if(window.matchMedia('(max-width: 768px)').matches){
+    const benefitsSlider = new Swiper('.benefits__slider', {
+      slidesPerView: 1,
+      pagination: {
+        el: '.benefits-pagination',
+        type: "custom",
+        renderCustom: function (swiper, current, total) {
+            return current.toString().padStart(2,"0") + ' - ' + total.toString().padStart(2,"0");
+        }
+      },
 
-if(window.matchMedia('(max-width: 768px)').matches){
-  const benefitsSlider = new Swiper('.benefits__slider', {
-    slidesPerView: 1,
-    pagination: {
-      el: '.benefits-pagination',
-      type: "custom",
-      renderCustom: function (swiper, current, total) {
-          return current.toString().padStart(2,"0") + ' - ' + total.toString().padStart(2,"0");
-      }
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: '.benefits-button-next',
-      prevEl: '.benefits-button-prev',
-    },
-  })
+      // Navigation arrows
+      navigation: {
+        nextEl: '.benefits-button-next',
+        prevEl: '.benefits-button-prev',
+      },
+    })
+  }
 }
+window.addEventListener('resize', initSlider)
+initSlider()
+
