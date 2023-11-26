@@ -23,8 +23,6 @@ function onResize() {
       scrub: 2,
       invalidateOnRefresh: true
     })
-
-
     ScrollTrigger.addEventListener("refreshInit", onResize);
   });
 

@@ -16,14 +16,19 @@
 
 
   &__logo {
-    padding: 0 6.2rem;
+    padding: 1.4rem 6.2rem;
     border-bottom: 0.1rem solid rgba(255, 255, 255, 0.50);
     display: flex;
     align-items: center;
     justify-content: center;
 
-    p {
-      margin: 0;
+    &>a {
+      display: block;
+    }
+
+    img {
+      max-width: 9.8rem;
+      width: 100%;
     }
 
     @include mobile {
@@ -49,6 +54,7 @@
   &__col {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 
     @include mobile {
       display: none;
@@ -57,6 +63,7 @@
 
   &__row {
     display: flex;
+    width: 100%;
     border-left: 0.1rem solid rgba(255, 255, 255, 0.50);
 
     border-bottom: 0.1rem solid rgba(255, 255, 255, 0.50);
@@ -64,14 +71,16 @@
   }
 
   &__list {
+    width: 100%;
     display: flex;
-    gap: 5rem;
+    justify-content: space-between;
     align-items: center;
-    padding: 1.1rem 0.4rem;
     margin-right: 6.2rem;
+
   }
 
   &__item {
+    padding: 1rem;
     color: #FFF;
     font-family: Roboto;
     font-size: 1.2rem;
@@ -104,7 +113,9 @@
   &__socials {
     display: flex;
     align-items: center;
-    gap: 2.9rem;
+    justify-content: space-between;
+    gap: 5rem;
+    padding-right: 5rem;
   }
 
   &__call {
