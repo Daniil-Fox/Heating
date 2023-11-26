@@ -184,8 +184,8 @@ a {
   background-color: #294B9B;
   -webkit-transition: background-color 0.3s ease-in;
   transition: background-color 0.3s ease-in;
-  -webkit-box-shadow: 8px 6px 10px 0px rgba(0, 0, 0, 0.35);
-  box-shadow: 8px 6px 10px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0.8rem 0.6rem 1rem 0rem rgba(0, 0, 0, 0.35);
+  box-shadow: 0.8rem 0.6rem 1rem 0rem rgba(0, 0, 0, 0.35);
   width: 25rem;
 }
 @media (any-hover: hover) {
