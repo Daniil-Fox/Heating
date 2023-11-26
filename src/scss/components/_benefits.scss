@@ -116,8 +116,11 @@
   }
 
   &__title {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     margin: 0;
+    height: 150px;
+    width: 100%;
     margin-bottom: 7rem;
     position: relative;
     z-index: 2;
@@ -132,6 +135,7 @@
     text-align: left;
 
     @include mobile {
+      height: unset;
       margin-bottom: 0;
     }
 
@@ -139,9 +143,9 @@
       content: "Преимущества";
       position: absolute;
       z-index: -1;
-      left: 175%;
+      left: 0%;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-12rem, -50%);
       color: rgba(24, 52, 117, 0.05);
       leading-trim: both;
       text-edge: cap;
