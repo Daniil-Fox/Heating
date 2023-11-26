@@ -932,7 +932,7 @@ a {
   -ms-flex: 1;
   flex: 1;
   counter-increment: counter;
-  width: 60rem;
+  width: 48rem;
   height: 25.6rem;
   padding: 5.8rem 3.3rem;
   -webkit-box-shadow: 0.8rem 0.6rem 1rem 0rem rgba(0, 0, 0, 0.35);
