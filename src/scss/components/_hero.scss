@@ -12,6 +12,13 @@
     align-items: center;
     justify-content: center;
 
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(64, 61, 58, 0.40) 0%, rgba(64, 61, 58, 0.00) 56.93%);
+    }
+
     @media (min-width: 1920px) {
       background-image: url('./../img/hero-bg-2x.webp');
     }
