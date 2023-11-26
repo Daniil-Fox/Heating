@@ -204,7 +204,8 @@ const partnersSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]
   loop: true,
   speed: 2000,
   autoplay: {
-    delay: 0
+    delay: 0,
+    disableOnInteraction: false
   },
   breakpoints: {
     320: {

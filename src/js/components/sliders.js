@@ -5,7 +5,8 @@ const partnersSlider = new Swiper('.partners__slider', {
   loop: true,
   speed: 2000,
   autoplay: {
-    delay: 0
+    delay: 0,
+    disableOnInteraction: false,
   },
   breakpoints: {
     320 : {
