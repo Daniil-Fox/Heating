@@ -115,6 +115,8 @@ a {
 
 .btn {
   display: inline-block;
+  position: relative;
+  z-index: 5;
   color: #FFF;
   font-family: "Roboto";
   font-size: 1.8rem;
