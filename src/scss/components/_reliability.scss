@@ -2,6 +2,27 @@
   padding-top: 17rem;
   padding-bottom: 16rem;
   background-color: #183475;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 77.9rem;
+    height: 64.6rem;
+    background-image: url('./../img/logo-bg.svg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include mobile {
+      top: 10.6rem;
+      width: 100%;
+      height: 35.6rem;
+    }
+  }
 
   @include mobile {
     padding-top: 14.5rem;
@@ -17,6 +38,8 @@
       grid-template-columns: 1fr;
       gap: 12rem;
       margin-bottom: 11rem;
+      margin-left: -1.6rem;
+      margin-right: -1.6rem;
     }
   }
 
@@ -52,6 +75,7 @@
 
     @include mobile {
       flex-wrap: wrap;
+      margin-bottom: 5rem;
     }
   }
 }
@@ -63,6 +87,11 @@
 
   @include mobile {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid #fff;
 
     &:not(:last-child) {
       margin-bottom: 5rem;
@@ -88,9 +117,15 @@
       width: 100%;
       height: 0.1rem;
       background-color: #fff;
+
+      @include mobile {
+        display: none;
+      }
     }
 
-
+    @include mobile {
+      flex-grow: 1;
+    }
   }
 
   &__text {
@@ -101,6 +136,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @include mobile {
+      max-width: 16rem;
+      text-align: right;
+    }
   }
 }
 
@@ -133,6 +173,10 @@
 
       @include mobile {
         padding-left: 7rem;
+
+        &>.rel-advs__desc {
+          max-width: unset;
+        }
       }
     }
   }
@@ -165,6 +209,11 @@
       width: 100%;
       height: 0.1rem;
       background-color: #fff;
+
+      @include mobile {
+        top: 1.8rem;
+        transform: unset;
+      }
     }
   }
 
@@ -176,6 +225,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @include mobile {
+      max-width: 28rem;
+    }
+
   }
 
   &__images {

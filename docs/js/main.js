@@ -175,9 +175,8 @@ mm.add("(min-width: 769px)", () => {
   });
   gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
     trigger: '.benefits',
-    start: 'center center',
-    end: "+=200% bottom",
-    pin: true,
+    start: 'bottom bottom',
+    end: "top top",
     animation: tween,
     scrub: 2,
     invalidateOnRefresh: true
