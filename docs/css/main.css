@@ -1431,14 +1431,25 @@ a {
   border-bottom: 0.1rem solid #FFF;
   cursor: -webkit-grab;
   cursor: grab;
+  height: 11rem;
+  overflow: hidden;
 }
 .partners__slider .swiper-slide {
   width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .partners__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -1449,6 +1460,9 @@ a {
 }
 .partners__item img {
   height: 5rem;
+}
+.partners__item--rus img {
+  height: 8.1rem;
 }
 @media (max-width: 768px) {
   .partners__item {

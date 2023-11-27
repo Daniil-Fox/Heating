@@ -63,14 +63,19 @@
     border-top: 0.1rem solid #FFF;
     border-bottom: 0.1rem solid #FFF;
     cursor: grab;
+    height: 11rem;
+    overflow: hidden;
 
     .swiper-slide {
       width: auto;
+      display: flex;
+      align-items: center;
     }
   }
 
   &__item {
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-shrink: 0;
     width: 50rem;
@@ -78,6 +83,12 @@
 
     img {
       height: 5rem;
+    }
+
+    &--rus {
+      img {
+        height: 8.1rem;
+      }
     }
 
     @include mobile {

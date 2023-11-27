@@ -175,10 +175,11 @@ mm.add("(min-width: 769px)", () => {
   });
   gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
     trigger: '.benefits',
-    start: 'bottom bottom',
+    start: 'bottom+=50px bottom',
     end: "top top",
     animation: tween,
     scrub: 2,
+    pin: '.wrapper',
     invalidateOnRefresh: true
   });
   gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.addEventListener("refreshInit", onResize);

@@ -16,11 +16,12 @@ function onResize() {
     })
     ScrollTrigger.create({
       trigger: '.benefits',
-      start: 'bottom bottom',
+      start: 'bottom+=50px bottom',
       end:  "top top",
       animation: tween,
       scrub: 2,
-      invalidateOnRefresh: true
+      pin: '.wrapper',
+      invalidateOnRefresh: true,
     })
     ScrollTrigger.addEventListener("refreshInit", onResize);
   });
