@@ -1,0 +1,57 @@
+.compos {
+  padding-bottom: 13.7rem;
+  background-color: #183475;
+
+  &__title {
+    &::before {
+      content: "котельная";
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    margin-top: -1rem;
+    margin-bottom: 15rem;
+    padding-left: 12.2rem;
+    color: #FFF;
+    font-family: "Roboto";
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+
+  &__content {
+    position: relative;
+  }
+
+  &__image {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 96.5%;
+    transform: translateY(-50%);
+    max-width: 127rem;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__list {}
+
+  &__item {
+    max-width: 30rem;
+    color: #FFF;
+    font-family: "Roboto";
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.scheme {
+  padding-bottom: 12rem;
+
+  &__title {
+    &::before {
+      content: "Схема работ";
+    }
+  }
+
+  &__accord {}
+}

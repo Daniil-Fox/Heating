@@ -1,0 +1,116 @@
+.footer {
+  padding: 8.3rem 0;
+  padding-bottom: 3.7rem;
+  background-color: #403D3A;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+  }
+
+  &__logo {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__col {
+    grid-column: 3 span;
+    display: flex;
+
+    &--centered {
+      justify-content: center;
+    }
+  }
+
+  &__list {}
+
+  &__item {
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__link {
+    color: #FFF;
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__address {
+    grid-column: 2 span;
+
+    p {
+      margin: 0;
+      color: #FFF;
+      font-family: "Roboto";
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
+
+
+.footer-socials {
+  &__item {
+    &--tel {
+      a {
+        font-size: 2.4rem;
+      }
+
+      margin-bottom: 1.5rem;
+    }
+
+    &--call {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2.4rem;
+
+      svg {
+        margin-right: 0.5rem;
+      }
+
+      a {
+        font-size: 1.2rem;
+      }
+    }
+
+    &--mail {
+      font-size: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    &--tg,
+    &--wh {
+      display: inline-block;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 100%;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &--tg {
+      margin-right: 4.2rem;
+    }
+  }
+}

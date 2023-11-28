@@ -1,0 +1,129 @@
+.services {
+  padding-top: 12.6rem;
+  padding-bottom: 12rem;
+
+  &__title {
+    margin-bottom: 1.6rem;
+
+    &::before {
+      content: "Комплекс услуг"
+    }
+  }
+
+  &__img {
+    stroke-width: 20px;
+    stroke: #FFF;
+    filter: drop-shadow(0.8rem 0.6rem 1rem rgba(0, 0, 0, 0.35));
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__list {
+    padding-right: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-content: space-evenly;
+  }
+
+  &__item {
+    &>span {
+      max-width: 29rem;
+    }
+
+    padding-left: 2rem;
+    position: relative;
+    color: #403D3A;
+    font-family: "Roboto";
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    border-bottom: 0.1rem solid #183475;
+
+    &::after {
+      content: '';
+      width: 6rem;
+      height: 6rem;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &--deliv {
+      &::after {
+        background-image: url('./../img/services-icons/01.svg');
+      }
+    }
+
+    &--set {
+      margin-right: -5rem;
+
+      &::after {
+        background-image: url('./../img/services-icons/02.svg');
+      }
+    }
+
+    &--lau {
+      margin-right: -10rem;
+
+      &::after {
+        background-image: url('./../img/services-icons/03.svg');
+      }
+    }
+
+    &--serv {
+      margin-right: -15rem;
+
+      &::after {
+        background-image: url('./../img/services-icons/04.svg');
+      }
+    }
+
+    &--acc {
+      margin-right: -20rem;
+
+      &::after {
+        background-image: url('./../img/services-icons/05.svg');
+      }
+    }
+
+    &--sup {
+      margin-right: -25rem;
+
+      &::after {
+        background-image: url('./../img/services-icons/06.svg');
+      }
+    }
+
+    &--rem {
+      margin-right: -30rem;
+
+      &::after {
+        background-image: url('./../img/services-icons/07.svg');
+      }
+    }
+
+    &--dem {
+      margin-right: -35rem;
+
+      &::after {
+        background-image: url('./../img/services-icons/08.svg');
+      }
+    }
+  }
+
+}

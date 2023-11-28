@@ -9,6 +9,9 @@ var rellax = new Rellax('.rellax', {
   center: true
 });
 
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => rellax.refresh(), 70)
+})
 
 window.addEventListener('resize', () => {
   rellax.refresh()

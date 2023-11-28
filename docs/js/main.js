@@ -10,8 +10,13 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_scroll_benefits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/scroll-benefits */ "./src/js/components/scroll-benefits.js");
-/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/sliders */ "./src/js/components/sliders.js");
+/* harmony import */ var _components_scroll_heating__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/scroll-heating */ "./src/js/components/scroll-heating.js");
+/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/sliders */ "./src/js/components/sliders.js");
+/* harmony import */ var _components_accord__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/accord */ "./src/js/components/accord.js");
+/* harmony import */ var _components_accord__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_accord__WEBPACK_IMPORTED_MODULE_3__);
 console.log('components');
+
+
 
 
 
@@ -149,6 +154,27 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/components/accord.js":
+/*!*************************************!*\
+  !*** ./src/js/components/accord.js ***!
+  \*************************************/
+/***/ (() => {
+
+const accordion = document.querySelector('.accord');
+if (accordion) {
+  const items = accordion.querySelectorAll('.accord__item');
+  items.forEach(el => {
+    el.querySelector('.accord__header').addEventListener('click', e => {
+      e.preventDefault();
+      const currentDesc = el.querySelector('.accord__desc');
+      el.classList.toggle('active');
+      el.classList.contains('active') ? currentDesc.style.maxHeight = currentDesc.scrollHeight + 'px' : currentDesc.style.maxHeight = null;
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/components/scroll-benefits.js":
 /*!**********************************************!*\
   !*** ./src/js/components/scroll-benefits.js ***!
@@ -176,9 +202,9 @@ mm.add("(min-width: 769px)", () => {
   gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
     trigger: '.benefits',
     start: 'bottom+=50px bottom',
-    end: "top top",
+    end: "+=30% top",
     animation: tween,
-    scrub: 2,
+    scrub: 1,
     pin: '.wrapper',
     invalidateOnRefresh: true
   });
@@ -186,6 +212,75 @@ mm.add("(min-width: 769px)", () => {
 });
 window.addEventListener('resize', () => {
   onResize();
+});
+
+/***/ }),
+
+/***/ "./src/js/components/scroll-heating.js":
+/*!*********************************************!*\
+  !*** ./src/js/components/scroll-heating.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+function onResize() {
+  gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.refresh(true);
+  gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.update();
+}
+const heatingVideo = document.querySelector('.heating__video');
+const timeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
+timeline.to(heatingVideo, {
+  clipPath: 'circle(100% at 50% 50%)'
+}).set(heatingVideo, {
+  clipPath: 'inset(0%)'
+}).to(heatingVideo, {
+  clipPath: 'inset(5% 5% 5% 5%)'
+});
+gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
+  trigger: '.heating',
+  animation: timeline,
+  scrub: 0.5,
+  start: 'top top',
+  end: "+=200%",
+  pin: true
+});
+const timeline2 = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
+var slides = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray(".video-block__slide");
+slides.forEach(el => {
+  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(el, {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: el,
+      // animation: timeline2,
+      start: 'top bottom-=25%',
+      end: '+=60vh',
+      scrub: 0.5,
+      markers: true
+    }
+  });
+});
+// timeline2.to(containers.querySelectorAll('.video-block__slide'), {opacity: 1})
+
+// ScrollTrigger.create({
+
+// })
+
+const timeline3 = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
+timeline3.to('.video-block', {
+  yPercent: -100
+});
+gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
+  trigger: '.heating',
+  animation: timeline3,
+  start: 'top top',
+  end: '+=200%',
+  scrub: 0.5
 });
 
 /***/ }),
@@ -238,6 +333,12 @@ const initSlider = () => {
 };
 window.addEventListener('resize', initSlider);
 initSlider();
+
+// const heatingSlider = new Swiper('.heating__slider', {
+//   direction: 'vertical',
+//   mousewheel: true,
+//   speed: 3000
+// })
 
 /***/ }),
 
@@ -23221,6 +23322,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var rellax = new (rellax__WEBPACK_IMPORTED_MODULE_4___default())('.rellax', {
   center: true
+});
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => rellax.refresh(), 70);
 });
 window.addEventListener('resize', () => {
   rellax.refresh();

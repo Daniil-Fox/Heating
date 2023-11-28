@@ -40,3 +40,10 @@ const initSlider = () => {
 window.addEventListener('resize', initSlider)
 initSlider()
 
+
+
+// const heatingSlider = new Swiper('.heating__slider', {
+//   direction: 'vertical',
+//   mousewheel: true,
+//   speed: 3000
+// })

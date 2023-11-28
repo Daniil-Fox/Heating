@@ -1,0 +1,152 @@
+.discount {
+  background-color: #183475;
+  padding: 8rem 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 7.9rem;
+    transform: translate(-50%, 0);
+
+    height: 64.6rem;
+    width: 77.9rem;
+
+    background-image: url('./../img/logo-bg.svg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  &__container {
+    max-width: 117rem;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-left: -12rem;
+    height: unset;
+    margin-bottom: 2rem;
+
+    &::before {
+      content: "скидка";
+    }
+  }
+
+  &__desc {
+    align-self: flex-end;
+
+    margin: 0;
+    color: #FFF;
+    max-width: 55.2rem;
+    text-shadow: 0.8rem 0.6rem 1rem rgba(0, 0, 0, 0.35);
+    font-family: "Oswald";
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    align-items: flex-end;
+
+    span {
+      font-size: 12.8rem;
+      line-height: 1.15;
+    }
+  }
+}
+
+
+.disc-form {
+  position: relative;
+  z-index: 5;
+
+  &__list {}
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__question {
+    margin: 0;
+    margin-bottom: 3rem;
+    color: #FFF;
+    font-family: "Roboto";
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    cursor: pointer;
+    user-select: none;
+
+    input[type="checkbox"] {
+      cursor: pointer;
+      background: #FFF;
+      box-shadow: 0.8rem 0.6rem 1rem 0rem rgba(0, 0, 0, 0.35);
+    }
+
+    span {
+      color: #FFF;
+      font-family: "Roboto";
+      font-size: 2.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--unspace {
+      justify-content: unset;
+      gap: 10rem;
+    }
+  }
+
+  &__input {
+    padding: 1rem;
+    background-color: unset;
+    border: none;
+    border-bottom: 0.2rem solid #FFF;
+    width: 100%;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.30);
+    }
+
+    &--address {
+      flex: 1;
+    }
+  }
+
+  &__btn {}
+}

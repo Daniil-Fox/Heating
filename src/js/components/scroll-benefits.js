@@ -17,9 +17,9 @@ function onResize() {
     ScrollTrigger.create({
       trigger: '.benefits',
       start: 'bottom+=50px bottom',
-      end:  "top top",
+      end:  "+=30% top",
       animation: tween,
-      scrub: 2,
+      scrub: 1,
       pin: '.wrapper',
       invalidateOnRefresh: true,
     })

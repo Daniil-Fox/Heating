@@ -173,3 +173,79 @@ a {
     bottom: 0;
   }
 }
+
+.big-title {
+  display: flex;
+  align-items: center;
+  height: 15rem;
+  width: 100%;
+  max-width: 130rem;
+
+  margin: 0;
+  margin-bottom: 3.4rem;
+
+
+  padding-left: 12rem;
+
+  position: relative;
+  z-index: 2;
+
+  color: #fff;
+  font-family: "Oswald";
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+
+  @include mobile {
+    height: unset;
+    font-size: 4rem;
+    padding-left: unset;
+    width: 100%;
+    margin-bottom: 10rem;
+  }
+
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    white-space: nowrap;
+    z-index: -1;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: rgba(255, 255, 255, 0.05);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "Oswald";
+    font-size: 18.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 6.4rem;
+      top: 25%;
+      transform: translate(0, -75%);
+      margin-left: -1.6rem;
+    }
+  }
+
+  &--dark {
+    color: #403D3A;
+
+    &::before {
+      color: rgba(24, 52, 117, 0.05);
+    }
+  }
+
+}
+
+input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
+}
