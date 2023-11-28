@@ -10,9 +10,15 @@ var rellax = new Rellax('.rellax', {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => rellax.refresh(), 70)
+  setTimeout(() => {
+    rellax.refresh()
+  }, 70)
 })
 
 window.addEventListener('resize', () => {
   rellax.refresh()
 })
+
+
+import AOS from 'aos';
+AOS.init();
