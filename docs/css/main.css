@@ -2345,7 +2345,7 @@ input[type=checkbox] {
   position: absolute;
   width: 100%;
   height: auto;
-  left: 50%;
+  left: 40%;
   top: 90%;
   will-change: transform;
 }
