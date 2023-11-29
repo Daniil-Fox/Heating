@@ -18,11 +18,43 @@
 
 <body class="page__body">
   <div class="site-container">
-    <header class="header">
-  <div class="header__container">
-    <div class="header__logo logo">
-      <a><img src="./img/logo.svg" alt="Logo"></a>
+
+    <main class="main">
+      <div class="modal" data-form-modal>
+  <form class="modal-form form">
+    <h3>Оставьте заявку, и мы перезвоним Вам</h3>
+    <p>Чтобы проконсультировать по особенностям различных котельных и помочь подобрать подходящий вариант</p>
+    <div class="form__inputs">
+      <label>
+        <input type="text" class="form__input" placeholder="Ваше имя">
+      </label>
+      <label>
+        <input type="email" class="form__input" placeholder="Ваш email">
+      </label>
+      <label>
+        <input type="tel" class="form__input" data-type="phone" placeholder="Номер телефона">
+      </label>
     </div>
+    <label class="form-last__label">
+      <input type="checkbox">
+      <p class="form__policy">Согласен с <a href="./policy.html" target="_blank">политикой конфиденциальности</a>
+        сайта и даю согласие на
+        обработку персональных
+        данных.
+      </p>
+    </label>
+    <button type="submit" class="btn form__btn btn-reset">Оставить заявку</button>
+  </form>
+</div>
+      <div class="wrapper">
+        <section class="hero">
+  <header class="header">
+  <div class="header__container">
+    <a class="header__logo logo">
+      <svg>
+        <use xlink:href="img/sprite.svg#logo"></use>
+      </svg>
+    </a>
     <div class="header__col">
       <div class="header__row">
         <ul class="header__list list-reset">
@@ -108,9 +140,6 @@
     </div>
   </div>
 </header>
-    <main class="main">
-      <div class="wrapper">
-        <section class="hero">
   <div class="hero__wrapper">
     <div class="hero__container">
       <div class="hero__header">
@@ -120,9 +149,9 @@
         <h2 class="hero__subtitle">
           Мы не дадим Вам замерзнуть
         </h2>
-        <a href="#" class="btn btn-reset hero__btn">
+        <button class="btn btn-reset hero__btn btn-reset" data-form-btn>
           Связаться с нами
-        </a>
+        </button>
       </div>
     </div>
   </div>
@@ -152,9 +181,9 @@
         датчики, шестиступенчатая регулировка мощности. Автоматическая система управления позволяет добиться снижения
         затрат электроэнергии на 25–35% за один отопительный сезон.
       </p>
-      <a href="#" class="btn btn-reset benefits__btn centered">
+      <button class="btn btn-reset benefits__btn centered btn-reset" data-form-btn>
         Связаться с нами
-      </a>
+      </button>
     </div>
     <div class="benefits__heater">
       <picture>
@@ -531,6 +560,45 @@
           <img src="./img/compos-bg.png" srcset="./img/compos-bg-3x.png 3x, ./img/compos-bg-2x.png 2x"
             alt="Composition">
         </picture>
+
+      </div>
+      <p class="compos__text compos__text--main">* В случае необходимости обеспечим Вас ГВС и бойлерами</p>
+    </div>
+
+    <div class="compos__slider swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide compos__slide">
+          <picture>
+            <source srcset="./img/compose-slide-1.webp">
+            <img src="./img/compose-slide-1.png" alt="Slide 1">
+          </picture>
+        </div>
+        <div class="swiper-slide compos__slide">
+          <picture>
+            <source srcset="./img/compose-slide-2.webp">
+            <img src="./img/compose-slide-2.png" alt="Slide 2">
+          </picture>
+        </div>
+        <div class="swiper-slide compos__slide">
+          <picture>
+            <source srcset="./img/compose-slide-3.webp">
+            <img src="./img/compose-slide-3.png" alt="Slide 3">
+          </picture>
+        </div>
+        <div class="swiper-slide compos__slide">
+          <picture>
+            <source srcset="./img/compose-slide-4.webp">
+            <img src="./img/compose-slide-4.png" alt="Slide 4">
+          </picture>
+        </div>
+      </div>
+      <div class="compos__row">
+        <div class="compos__control">
+          <div class="compos-button-prev"></div>
+          <div class="compos-pagination"></div>
+          <div class="compos-button-next"></div>
+        </div>
+        <p class="compos__text">* В случае необходимости обеспечим Вас ГВС и бойлерами</p>
       </div>
     </div>
   </div>
@@ -549,7 +617,7 @@
     <form action="sumbit" class="discount__form disc-form">
       <ul class="disc-form__list list-reset">
         <li class="disc-form__item">
-          <p class="disc-form__question">Какая мощность котельной Вас интересует?</p>
+          <p class="disc-form__question">1.Какая мощность котельной Вас интересует?</p>
           <div class="disc-form__row disc-form__row--unspace">
             <label class="disc-form__label">
               <input type="checkbox"><span>500 кВт</span>
@@ -560,7 +628,7 @@
           </div>
         </li>
         <li class="disc-form__item">
-          <p class="disc-form__question">На какой объект требуется установка котельной?</p>
+          <p class="disc-form__question">2.На какой объект требуется установка котельной?</p>
           <div class="disc-form__row">
             <label class="disc-form__label">
               <input type="checkbox"><span>Строящийся объект недвижимости</span>
@@ -574,7 +642,7 @@
           </div>
         </li>
         <li class="disc-form__item">
-          <p class="disc-form__question">Период аренды?</p>
+          <p class="disc-form__question">3.Период аренды?</p>
           <div class="disc-form__row">
             <label class="disc-form__label">
               <input type="checkbox"><span>1 месяц</span>
@@ -589,11 +657,11 @@
         </li>
         <div class="disc-form__row">
           <li class="disc-form__item">
-            <p class="disc-form__question">Период аренды?</p>
-            <input type="text" class="disc-form__input" placeholder="15.12.2023...">
+            <p class="disc-form__question">4.Дата начала аренды</p>
+            <input type="text" class="disc-form__input" data-type="date" placeholder="15.12.2023...">
           </li>
           <li class="disc-form__item">
-            <p class="disc-form__question">Адрес объекта (хотя бы город)</p>
+            <p class="disc-form__question">5.Адрес объекта (хотя бы город)</p>
             <input type="text" class="disc-form__input" placeholder="город Москва...">
           </li>
 
@@ -612,34 +680,39 @@
         жизнедеятельности
       </p>
     </div>
+  </div>
+  <div class="heating__video">
     <div class="swiper heating__slider video-block">
       <div class="swiper-wrapper video-block__wrapper">
         <div class="swiper-slide video-block__slide">
-          <p data-aos="fade-up">
+          <p>
             <span>1.</span>Обеспечение подачи временного отопления
           </p>
         </div>
         <div class="swiper-slide video-block__slide">
-          <p data-aos="fade-up">
+          <p>
             <span>2.</span>Обеспечение отопления в зданиях, находящихся на стадии постройки
           </p>
         </div>
         <div class="swiper-slide video-block__slide">
-          <p data-aos="fade-up">
+          <p>
             <span>3.</span>Нагрев воды в ремонтируемых зданиях
           </p>
         </div>
         <div class="swiper-slide video-block__slide">
-          <p data-aos="fade-up">
+          <p>
             <span>4.</span>Подача бесперебойного тепла в местах временного проживания
           </p>
         </div>
       </div>
     </div>
-  </div>
-  <div class="heating__video">
     <!-- <img src="./img/bg.jpg" alt=""> -->
-    <video src="./cover.webm" autoplay muted loop></video>
+    <video loop class="heating-video">
+      <source src="./cover.webm">
+    </video>
+    <button class="video-mob__btn btn-reset">
+      Смотреть видео
+    </button>
   </div>
 </section>
       <section class="services">
@@ -648,11 +721,8 @@
     <div class="services__container">
       <div class="services__img">
         <picture>
-          <source srcset="./img/services-bg-3x.webp" media="(min-width: 2560px)">
-          <source srcset="./img/services-bg-2x.webp" media="(min-width: 1920px)">
           <source srcset="./img/services-bg.webp">
-          <img src="./img/services-bg.jpg" srcset="./img/services-bg-2x.jpg 2x, ./img/services-bg-3x.jpg 3x"
-            alt="Services">
+          <img src="./img/services-bg.jpg" alt="Services">
         </picture>
       </div>
       <ul class="services__list list-reset">
@@ -719,16 +789,17 @@
         <input type="email" class="form__input" placeholder="Ваш email">
       </label>
       <label>
-        <input type="tel" class="form__input" placeholder="Номер телефона">
+        <input type="tel" class="form__input" data-type="phone" placeholder="Номер телефона">
       </label>
       <label>
         <input type="checkbox">
-        <p class="form__policy">Согласен с <a href="#">политикой конфиденциальности</a> сайта и даю согласие на
+        <p class="form__policy">Согласен с <a href="./policy.html" target="_blank">политикой конфиденциальности</a>
+          сайта и даю согласие на
           обработку персональных
           данных.
         </p>
       </label>
-      <a href="#" class="btn form__btn">Оставить заявку</a>
+      <button type="submit" class="btn form__btn btn-reset">Оставить заявку</button>
     </form>
   </div>
 </section>
@@ -744,7 +815,7 @@
             1. Согласование деталей
           </h3>
         </div>
-        <div class="accord__row">
+        <div class="accord__row accord__row--desc">
           <p class="accord__desc">
             Оставьте заявку или обратитесь к нам за бесплатной консультацией, если проблема с
             отоплением кажется Вам сложной.
@@ -757,10 +828,10 @@
         <div class="accord__row accord__header">
           <span class="accord__line"></span>
           <h3 class="accord__title">
-            2.Подписание договора аренды мобильной котельной
+            2.Подписание договора аренды
           </h3>
         </div>
-        <div class="accord__row">
+        <div class="accord__row accord__row--desc">
           <p class="accord__desc">
             После согласования условий на установку с заказчиков наступает время для заключения соглашения на аренду
             модульной котельной.
@@ -777,7 +848,7 @@
             3.Монтаж
           </h3>
         </div>
-        <div class="accord__row">
+        <div class="accord__row accord__row--desc">
           <p class="accord__desc">
             Монтаж котельных осуществляется на ровное твердое основание. В идеале – дорожные плиты, по две под каждый
             контейнер.
@@ -796,7 +867,7 @@
             4.Пуско-наладка
           </h3>
         </div>
-        <div class="accord__row">
+        <div class="accord__row accord__row--desc">
           <p class="accord__desc">
             При готовности котельной к пуско-наладке (наличие теплотрассы и теплоносителя в ней, электропитания и
             топлива) можно приступать к запуску. Обычно эта работа занимает не более одного рабочего дня.
@@ -814,7 +885,7 @@
             5.Эксплуатация
           </h3>
         </div>
-        <div class="accord__row">
+        <div class="accord__row accord__row--desc">
           <p class="accord__desc">
             Мы всегда рекомендуем нашим заказчикам поручить все действия, связанные с эксплуатацией котельных в наши
             руки. Это отличный способ избежать спорных ситуаций.
@@ -872,9 +943,11 @@
     <footer class="footer">
   <div class="container footer__container">
     <a href="#" class="footer__logo">
-      <img src="./img/logo.svg" alt="Logo">
+      <svg>
+        <use xlink:href="img/sprite.svg#logo"></use>
+      </svg>
     </a>
-    <div class="footer__col footer__col--centered">
+    <div class="footer__col footer__col--centered mob-ord-1">
       <ul class="footer__list list-reset">
         <li class="footer__item">
           <a href="#" class="footer__link">
@@ -898,7 +971,7 @@
         </li>
       </ul>
     </div>
-    <div class="footer__col footer__col--centered">
+    <div class="footer__col footer__col--centered mob-ord-3">
       <ul class="footer__list list-reset">
         <li class="footer__item">
           <a href="#" class="footer__link">
@@ -923,7 +996,7 @@
       </ul>
     </div>
     <div class="footer__col">
-      <ul class="footer__list list-reset footer-socials">
+      <ul class="footer__list list-reset footer-socials mob-ord-2">
         <li class="footer-socials__item footer-socials__item--tel">
           <a href="telto:+78126280495" class="footer__link">+7 (812) 628-04-95</a>
         </li>
@@ -975,10 +1048,23 @@
       </ul>
     </div>
 
-    <address class="footer__address">
+    <address class="footer__address mob-ord-4">
       <p>Работаем по всей России</p>
       <p>Санкт-Петербург, ул. Проф. Качалова, 8</p>
     </address>
+  </div>
+  <div class="container">
+    <ul class="footer__copy footer-copy list-reset">
+      <li class="footer-copy__item">
+        <a href="./policy.html" class="footer-copy__link" target="_blank">Политика конфиденциальности</a>
+      </li>
+      <li class="footer-copy__item">
+        <a href="#!" class="footer-copy__link" target="_blank">Положение о защите персональных данных</a>
+      </li>
+      <li class="footer-copy__item">
+        <a href="#!" class="footer-copy__link" target="_blank">Политика использования Cookies</a>
+      </li>
+    </ul>
   </div>
 </footer>
     

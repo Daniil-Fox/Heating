@@ -2,11 +2,20 @@
   padding-top: 12.6rem;
   padding-bottom: 12rem;
 
+  @include mobile {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
   &__title {
     margin-bottom: 1.6rem;
 
     &::before {
       content: "Комплекс услуг"
+    }
+
+    @include mobile {
+      margin-bottom: 6rem;
     }
   }
 
@@ -19,11 +28,21 @@
       height: 100%;
       width: 100%;
     }
+
+    @include mobile {
+      margin-left: -1.6rem;
+      margin-right: -1.6rem;
+      margin-bottom: 4rem;
+    }
   }
 
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__list {
@@ -32,11 +51,19 @@
     flex-direction: column;
     justify-content: flex-end;
     justify-content: space-evenly;
+
+    @include mobile {
+      padding-right: unset;
+    }
   }
 
   &__item {
     &>span {
       max-width: 29rem;
+
+      @include mobile {
+        max-width: unset;
+      }
     }
 
     padding-left: 2rem;
@@ -54,6 +81,12 @@
 
     border-bottom: 0.1rem solid #183475;
 
+    &:not(:last-child) {
+      @include mobile {
+        margin-bottom: 2rem;
+      }
+    }
+
     &::after {
       content: '';
       width: 6rem;
@@ -61,6 +94,10 @@
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
+    }
+
+    @include mobile {
+      width: 100%;
     }
 
     &--deliv {
@@ -72,6 +109,10 @@
     &--set {
       margin-right: -5rem;
 
+      @include mobile {
+        maring-right: 0
+      }
+
       &::after {
         background-image: url('./../img/services-icons/02.svg');
       }
@@ -79,6 +120,10 @@
 
     &--lau {
       margin-right: -10rem;
+
+      @include mobile {
+        maring-right: 0
+      }
 
       &::after {
         background-image: url('./../img/services-icons/03.svg');
@@ -88,6 +133,10 @@
     &--serv {
       margin-right: -15rem;
 
+      @include mobile {
+        maring-right: 0
+      }
+
       &::after {
         background-image: url('./../img/services-icons/04.svg');
       }
@@ -95,6 +144,10 @@
 
     &--acc {
       margin-right: -20rem;
+
+      @include mobile {
+        margin-right: 0
+      }
 
       &::after {
         background-image: url('./../img/services-icons/05.svg');
@@ -104,6 +157,10 @@
     &--sup {
       margin-right: -25rem;
 
+      @include mobile {
+        maring-right: 0
+      }
+
       &::after {
         background-image: url('./../img/services-icons/06.svg');
       }
@@ -112,6 +169,10 @@
     &--rem {
       margin-right: -30rem;
 
+      @include mobile {
+        maring-right: 0
+      }
+
       &::after {
         background-image: url('./../img/services-icons/07.svg');
       }
@@ -119,6 +180,10 @@
 
     &--dem {
       margin-right: -35rem;
+
+      @include mobile {
+        maring-right: 0
+      }
 
       &::after {
         background-image: url('./../img/services-icons/08.svg');

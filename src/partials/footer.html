@@ -1,9 +1,11 @@
 <footer class="footer">
   <div class="container footer__container">
     <a href="#" class="footer__logo">
-      <img src="./img/logo.svg" alt="Logo">
+      <svg>
+        <use xlink:href="img/sprite.svg#logo"></use>
+      </svg>
     </a>
-    <div class="footer__col footer__col--centered">
+    <div class="footer__col footer__col--centered mob-ord-1">
       <ul class="footer__list list-reset">
         <li class="footer__item">
           <a href="#" class="footer__link">
@@ -27,7 +29,7 @@
         </li>
       </ul>
     </div>
-    <div class="footer__col footer__col--centered">
+    <div class="footer__col footer__col--centered mob-ord-3">
       <ul class="footer__list list-reset">
         <li class="footer__item">
           <a href="#" class="footer__link">
@@ -52,7 +54,7 @@
       </ul>
     </div>
     <div class="footer__col">
-      <ul class="footer__list list-reset footer-socials">
+      <ul class="footer__list list-reset footer-socials mob-ord-2">
         <li class="footer-socials__item footer-socials__item--tel">
           <a href="telto:+78126280495" class="footer__link">+7 (812) 628-04-95</a>
         </li>
@@ -104,9 +106,22 @@
       </ul>
     </div>
 
-    <address class="footer__address">
+    <address class="footer__address mob-ord-4">
       <p>Работаем по всей России</p>
       <p>Санкт-Петербург, ул. Проф. Качалова, 8</p>
     </address>
+  </div>
+  <div class="container">
+    <ul class="footer__copy footer-copy list-reset">
+      <li class="footer-copy__item">
+        <a href="./policy.html" class="footer-copy__link" target="_blank">Политика конфиденциальности</a>
+      </li>
+      <li class="footer-copy__item">
+        <a href="#!" class="footer-copy__link" target="_blank">Положение о защите персональных данных</a>
+      </li>
+      <li class="footer-copy__item">
+        <a href="#!" class="footer-copy__link" target="_blank">Политика использования Cookies</a>
+      </li>
+    </ul>
   </div>
 </footer>

@@ -4,6 +4,29 @@
   padding-top: 5rem;
   min-height: 100vh;
 
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 35.6rem;
+    background-image: url('./../img/logo-bg.svg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  @include mobile {
+    background-color: #183475;
+  }
+
   .container {
     height: 100%;
   }
@@ -13,11 +36,20 @@
     z-index: 5;
     display: flex;
     justify-content: center;
+
+    @include mobile {
+      flex-direction: column;
+      margin-bottom: 5.8rem;
+    }
   }
 
   &__title {
     &::before {
       content: "Котельная";
+    }
+
+    @include mobile {
+      margin-bottom: 4rem;
     }
   }
 
@@ -41,15 +73,27 @@
     clip-path: circle(10% at 25% 75%);
     will-change: clip-path;
 
+    @include mobile {
+      position: relative;
+      clip-path: unset;
+      height: 90vh;
+    }
+
     video,
     img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
 
   &__slider {
     height: 100%;
+
+    @include mobile {
+      width: auto;
+      overflow: visible;
+    }
   }
 }
 
@@ -62,15 +106,31 @@
   top: 90%;
   will-change: transform;
 
+  @include mobile {
+    width: auto;
+    left: 6.7rem;
+    top: 0;
+  }
+
   &__wrapper {
     flex-direction: column;
+
+    @include mobile {
+      flex-direction: row;
+      gap: 7rem;
+    }
   }
 
   &__slide {
     height: 75vh;
     width: 100%;
-    opacity: 0;
+    // opacity: 0;
     max-width: 40rem;
+
+    @include mobile {
+      height: auto;
+      max-width: 32rem;
+    }
 
     &>p {
       display: flex;
@@ -82,7 +142,7 @@
       font-size: 2.6rem;
       font-style: normal;
       font-weight: 400;
-      line-height: normal;
+      line-height: 1;
 
       &>span {
         color: #183475;
@@ -93,7 +153,34 @@
         text-shadow: .8rem .6rem 1rem rgba(0, 0, 0, 0.35);
         font-family: "Oswald";
         font-size: 12.8rem;
+
+        @include mobile {
+          color: #fff;
+        }
       }
     }
+  }
+}
+
+.video-mob__btn {
+  display: none;
+  position: absolute;
+  bottom: 6rem;
+  left: 1.5rem;
+  width: 25rem;
+  height: 5rem;
+  padding: 1.5rem;
+  color: #FFF;
+  font-family: "Roboto";
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: 1px solid #FFF;
+
+  box-shadow: 8px 6px 10px 0px rgba(0, 0, 0, 0.35);
+
+  @include mobile {
+    display: block;
   }
 }

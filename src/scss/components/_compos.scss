@@ -2,15 +2,69 @@
   padding-bottom: 13.7rem;
   background-color: #183475;
 
+  @include mobile {
+    padding-top: 5.5rem;
+    padding-bottom: 12rem;
+  }
+
+  &__slider {
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 0.7rem;
+  }
+
+  &__text {
+    margin: 0;
+    color: #FFF;
+    font-family: "Roboto";
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &--main {
+      max-width: 25.6rem;
+      position: absolute;
+      z-index: 8;
+      right: 10rem;
+      bottom: 3rem;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__row {
+    position: relative;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
   &__title {
     &::before {
       content: "котельная";
+    }
+
+    @include mobile {
+      margin-bottom: 4rem;
     }
   }
 
   &__desc {
     margin: 0;
-    margin-top: -1rem;
+    margin-top: -3rem;
     margin-bottom: 15rem;
     padding-left: 12.2rem;
     color: #FFF;
@@ -19,11 +73,21 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @include mobile {
+      padding-left: 0;
+      margin-bottom: 10rem;
+      margin-top: -1rem;
+    }
   }
 
 
   &__content {
     position: relative;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__image {
@@ -54,4 +118,32 @@
       margin-bottom: 5rem;
     }
   }
+}
+
+.compos-button-prev,
+.compos-button-next {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  transform: rotate(45deg);
+}
+
+.compos-button-prev {
+  border-left: 0.2rem solid #fff;
+  border-bottom: 0.2rem solid #fff;
+}
+
+.compos-button-next {
+  border-top: 0.2rem solid #fff;
+  border-right: 0.2rem solid #fff;
+}
+
+.compos-pagination {
+  width: unset;
+  color: #fff;
+  font-family: "Oswald";
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }

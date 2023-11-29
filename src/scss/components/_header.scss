@@ -11,7 +11,81 @@
 
   @include mobile {
     border-bottom: 0.1rem solid #fff;
+  }
 
+  &--secondary {
+    position: relative;
+    background: #FFF;
+    box-shadow: 0.8rem 0.6rem 1rem 0px rgba(0, 0, 0, 0.35);
+
+    color: #403D3A;
+
+    .header__item {
+      color: #403D3A;
+    }
+
+    .header__row {
+      border-left: 0.1rem solid rgba(#403D3A, 0.5);
+
+      border-bottom: 0.1rem solid rgba(#403D3A, 0.5);
+    }
+
+    .header__link {
+      color: #403D3A;
+    }
+
+    .header__nav {
+      .nav__item {
+        @include hover {
+          .nav__link {
+            color: #fff !important;
+          }
+        }
+      }
+
+      .nav__link {
+        color: #403D3A;
+
+
+      }
+    }
+
+    .header__call {
+      color: #403D3A;
+      border-bottom: 1px solid #403D3A;
+
+      svg {
+        fill: #403D3A;
+      }
+    }
+
+    .socials__link {
+      svg {
+        fill: #403D3A;
+      }
+    }
+
+    .header__logo {
+
+      svg {
+        fill: #183475;
+      }
+    }
+
+    .header__contact {
+      color: #403D3A;
+      border-right: 0.1rem solid rgba(#403D3A, 0.5);
+      border-left: 0.1rem solid rgba(#403D3A, 0.5);
+
+    }
+
+    .burger {
+      color: #403D3A;
+    }
+
+    @include mobile {
+      border-bottom: 0.1rem solid rgba(#403D3A, 0.5);
+    }
   }
 
 
@@ -26,9 +100,11 @@
       display: block;
     }
 
-    img {
+    svg {
       max-width: 9.8rem;
+      max-height: 3.7rem;
       width: 100%;
+      fill: #fff;
     }
 
     @include mobile {
@@ -96,6 +172,10 @@
   &__phone {
     font-size: 1.4rem;
 
+    @include hover {
+      text-decoration: underline;
+    }
+
     a {
       color: inherit;
     }
@@ -108,6 +188,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @include hover {
+      text-decoration: underline;
+    }
   }
 
   &__nav {

@@ -290,7 +290,7 @@
 
 .rel-first-det {
   left: 5%;
-  bottom: -35%;
+  bottom: -65%;
 
   @include mobile {
     left: -15%;
@@ -300,16 +300,17 @@
 
 .rel-second-det {
   left: 60%;
-  top: -35%;
+  top: 0%;
 
   @include mobile {
     left: 30%;
+    top: -35%;
   }
 }
 
 .rel-third-det {
   right: 8%;
-  bottom: -10%;
+  bottom: -70%;
   width: 8.1rem;
   height: 10.8rem;
 

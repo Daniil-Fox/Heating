@@ -35,6 +35,20 @@ const initSlider = () => {
         prevEl: '.benefits-button-prev',
       },
     })
+    const composSlider = new Swiper('.compos__slider', {
+      slidesPerView: 1,
+      pagination: {
+        el: '.compos-pagination',
+        type: "custom",
+        renderCustom: function (swiper, current, total) {
+            return current.toString().padStart(2,"0") + ' - ' + total.toString().padStart(2,"0");
+        }
+      },
+      navigation: {
+        nextEl: '.compos-button-next',
+        prevEl: '.compos-button-prev',
+      },
+    })
   }
 }
 window.addEventListener('resize', initSlider)

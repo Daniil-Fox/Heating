@@ -1,9 +1,15 @@
 .scheme {
+  padding-top: 12rem;
   padding-bottom: 12rem;
+
 
   &__title {
     &::before {
       content: "Схема работ";
+    }
+
+    @include mobile {
+      margin-bottom: 3rem;
     }
   }
 

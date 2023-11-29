@@ -3,6 +3,10 @@
   padding: 8rem 0;
   position: relative;
 
+  @include mobile {
+    padding-top: 0;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -17,12 +21,22 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__header {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+
+    @include mobile {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      margin-bottom: 16.1rem;
+    }
   }
 
   &__container {
@@ -38,11 +52,16 @@
     &::before {
       content: "скидка";
     }
+
+    @include mobile {
+      margin-left: 0;
+      margin-bottom: 5rem;
+    }
   }
 
   &__desc {
     align-self: flex-end;
-
+    position: relative;
     margin: 0;
     color: #FFF;
     max-width: 55.2rem;
@@ -56,9 +75,23 @@
     display: flex;
     align-items: flex-end;
 
+    @include mobile {
+      font-size: 2.8rem;
+      max-width: 28.1rem;
+      align-self: unset;
+    }
+
     span {
       font-size: 12.8rem;
       line-height: 1.15;
+
+      @include mobile {
+        position: absolute;
+        top: 35%;
+        right: 0;
+        font-size: 9.6rem;
+        transform: translateX(65%);
+      }
     }
   }
 }
@@ -68,11 +101,20 @@
   position: relative;
   z-index: 5;
 
+  @include mobile {
+    padding: 0 1.5rem;
+  }
+
   &__list {}
 
   &__item {
+
     &:not(:last-child) {
       margin-bottom: 5rem;
+
+      @include mobile {
+        margin-bottom: 4rem;
+      }
     }
   }
 
@@ -85,6 +127,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @include mobile {
+      margin-bottom: 2rem;
+    }
+
   }
 
   &__label {
@@ -93,6 +140,10 @@
     gap: 3rem;
     cursor: pointer;
     user-select: none;
+
+    @include mobile {
+      width: 100%;
+    }
 
     input[type="checkbox"] {
       cursor: pointer;
@@ -118,6 +169,22 @@
     &--unspace {
       justify-content: unset;
       gap: 10rem;
+
+      .disc-form__label {
+        @include mobile {
+          width: auto;
+        }
+      }
+
+      @include mobile {
+        gap: unset;
+        justify-content: space-between;
+      }
+    }
+
+    @include mobile {
+      flex-wrap: wrap;
+      gap: 2rem;
     }
   }
 
@@ -148,5 +215,9 @@
     }
   }
 
-  &__btn {}
+  &__btn {
+    @include mobile {
+      margin: 0 auto;
+    }
+  }
 }

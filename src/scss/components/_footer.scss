@@ -1,17 +1,38 @@
 .footer {
   padding: 8.3rem 0;
-  padding-bottom: 3.7rem;
+  padding-bottom: 0;
   background-color: #403D3A;
+
+  @include mobile {
+    padding-top: 5.6rem;
+  }
 
   &__container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 2rem;
+    padding-bottom: 2rem;
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: flex-start;
+      gap: unset;
+    }
   }
 
   &__logo {
-    img {
+    @include mobile {
+      grid-column: 2 span;
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 4rem;
+    }
+
+    svg {
       width: 100%;
+      max-width: 9.6rem;
+      fill: #fff;
+      max-height: 3.7rem;
     }
   }
 
@@ -19,8 +40,16 @@
     grid-column: 3 span;
     display: flex;
 
+    @include mobile {
+      grid-column: 1 span;
+    }
+
     &--centered {
       justify-content: center;
+
+      @include mobile {
+        justify-content: start;
+      }
     }
   }
 
@@ -50,6 +79,11 @@
   &__address {
     grid-column: 2 span;
 
+    @include mobile {
+      grid-column: 1 span;
+      align-self: flex-end;
+    }
+
     p {
       margin: 0;
       color: #FFF;
@@ -68,6 +102,7 @@
 
 
 .footer-socials {
+
   &__item {
     &--tel {
       a {
@@ -111,6 +146,33 @@
 
     &--tg {
       margin-right: 4.2rem;
+    }
+  }
+}
+
+.footer-copy {
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.50);
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  &__link {
+    color: #FFF;
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @include hover {
+      text-decoration: underline;
     }
   }
 }

@@ -11,13 +11,14 @@ function onResize() {
   let tween = null
   let mm = gsap.matchMedia();
   mm.add("(min-width: 769px)", () => {
+
     tween = gsap.to(benefitsRow, {
       x: () => -(document.querySelector('.benefits__row').scrollWidth - window.innerWidth),
     })
     ScrollTrigger.create({
       trigger: '.benefits',
-      start: 'bottom+=50px bottom',
-      end:  "+=30% top",
+      start: 'top top+=30%',
+      end:  "+=30%",
       animation: tween,
       scrub: 1,
       pin: '.wrapper',
