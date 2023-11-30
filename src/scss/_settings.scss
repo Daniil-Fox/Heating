@@ -263,6 +263,7 @@ input[type="checkbox"] {
 .mob-ord-2 {
   @include mobile {
     order: 2;
+    margin-left: -1rem;
   }
 }
 
@@ -275,5 +276,6 @@ input[type="checkbox"] {
 .mob-ord-4 {
   @include mobile {
     order: 4;
+    margin-left: -1rem;
   }
 }
