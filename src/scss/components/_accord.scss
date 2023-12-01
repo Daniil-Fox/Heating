@@ -74,7 +74,9 @@
     }
 
     &--desc {
-      grid-template-columns: 1fr;
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
     }
   }
 
@@ -156,18 +158,25 @@
 
   &__desc {
     grid-column: 7 span;
-    margin: 0;
-    color: #403D3A;
-    font-family: "Roboto";
-    font-size: 2.8rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+
 
     max-height: 0;
     overflow: hidden;
     will-change: max-height;
     transition: max-height .3s ease-out;
 
+    &>p {
+      margin: 0;
+      color: #403D3A;
+      font-family: "Roboto";
+      font-size: 2.8rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
   }
 }

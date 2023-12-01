@@ -3210,9 +3210,11 @@ input[type=checkbox] {
     align-items: center;
   }
 }
-.accord__row--desc {
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .accord__row--desc {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
 }
 .accord__line {
   -ms-grid-column-span: 7;
@@ -3308,6 +3310,13 @@ input[type=checkbox] {
 .accord__desc {
   -ms-grid-column-span: 7;
   grid-column: 7 span;
+  max-height: 0;
+  overflow: hidden;
+  will-change: max-height;
+  -webkit-transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out;
+}
+.accord__desc > p {
   margin: 0;
   color: #403D3A;
   font-family: "Roboto";
@@ -3315,11 +3324,9 @@ input[type=checkbox] {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  max-height: 0;
-  overflow: hidden;
-  will-change: max-height;
-  -webkit-transition: max-height 0.3s ease-out;
-  transition: max-height 0.3s ease-out;
+}
+.accord__desc > p:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
 .about {
