@@ -544,7 +544,7 @@ input[type=checkbox] {
   padding: 0;
 }
 .header__phone {
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 @media (any-hover: hover) {
   .header__phone:hover {
@@ -557,7 +557,7 @@ input[type=checkbox] {
 .header__link {
   color: #FFF;
   font-family: Roboto;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
