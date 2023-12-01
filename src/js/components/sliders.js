@@ -1,22 +1,6 @@
 import Swiper from 'swiper/bundle';
-
-const partnersSlider = new Swiper('.partners__slider', {
-  slidesPerView: 3.9,
-  loop: true,
-  speed: 2000,
-  autoplay: {
-    delay: 0,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    320 : {
-      slidesPerView: 1.2,
-    },
-    768 : {
-      slidesPerView: 3.9,
-    }
-  }
-})
+import { Autoplay, Navigation, Pagination } from 'swiper';
+Swiper.use([Navigation, Pagination, Autoplay]);
 
 window.addEventListener('DOMContentLoaded', () => {
 

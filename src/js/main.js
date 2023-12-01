@@ -6,7 +6,7 @@ import './_components';
 import Rellax from 'rellax';
 
 var rellax = new Rellax('.rellax', {
-  center: true
+  // center: true
 });
 if(rellax){
   window.addEventListener('DOMContentLoaded', () => {
@@ -52,12 +52,26 @@ if(video){
   if(window.matchMedia('(max-width: 768px)').matches){
     const videoBtn = document.querySelector('.video-mob__btn')
     let clicked = false
-    videoBtn.addEventListener('click', () => {
+    function f(){
+      if (!document.fullscreenElement) {
+        video.pause()
+        video.volume = 0
         clicked = !clicked
-        clicked ? video.play() : video.pause()
+        document.removeEventListener('fullscreenchange', this)
+      }
+    }
+    videoBtn.addEventListener('click', () => {
+      clicked = !clicked
+        if(clicked){
+          video.play()
+          video.requestFullscreen()
+          video.volume = 0.5
+          document.addEventListener('fullscreenchange', f)
+        }
     })
 
   } else {
+    video.volume = 0
     const observer = new IntersectionObserver((entries, observer) => {
       if(entries[0].isIntersecting){
         video.play()

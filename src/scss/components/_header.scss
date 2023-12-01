@@ -22,6 +22,7 @@
 
     .header__item {
       color: #403D3A;
+
     }
 
     .header__row {
@@ -90,7 +91,7 @@
 
 
   &__logo {
-    padding: 1.4rem 6.4rem 1.5rem;
+    padding: 4.4rem;
     border-bottom: 0.1rem solid rgba(255, 255, 255, 0.50);
     display: flex;
     align-items: center;
@@ -101,10 +102,15 @@
     }
 
     svg {
-      max-width: 9.8rem;
-      max-height: 3.7rem;
+      max-width: 16.7rem;
+      max-height: 6.3rem;
       width: 100%;
       fill: #fff;
+
+      @include mobile {
+        max-width: 9.8rem;
+        height: 3.7rem;
+      }
     }
 
     @include mobile {
@@ -159,10 +165,14 @@
     padding: 1rem;
     color: #FFF;
     font-family: Roboto;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    height: 7.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:last-child {
       padding: 0;
@@ -202,8 +212,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 5rem;
-    padding-right: 5rem;
+    gap: 6rem;
+    padding-right: 3rem;
   }
 
   &__call {

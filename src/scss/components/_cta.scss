@@ -157,6 +157,7 @@
   }
 
   input[type="checkbox"] {
+    flex-shrink: 0;
     border: 0.1rem solid #183475;
     background: #FFF;
     box-shadow: 0.8rem 0.6rem 1rem 0rem rgba(0, 0, 0, 0.35);

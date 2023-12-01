@@ -39,7 +39,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 21.6rem;
+    padding-top: 32rem;
     padding-bottom: 25.3rem;
 
     @include mobile {
@@ -52,11 +52,11 @@
 
   &__title {
     margin: 0;
-    margin-bottom: 1.8rem;
+    margin-bottom: 2rem;
     color: #FFF;
     text-shadow: 0.8rem 0.6rem 1rem rgba(0, 0, 0, 0.35);
     font-family: "Oswald";
-    font-size: 4.8rem;
+    font-size: 6.4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -69,10 +69,10 @@
 
   &__subtitle {
     margin: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     color: #F4EEEA;
     font-family: "Roboto";
-    font-size: 3.2rem;
+    font-size: 4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -94,7 +94,7 @@
     padding: 0 3rem;
     display: flex;
     justify-content: space-evenly;
-    gap: 10rem;
+    gap: 2.3rem;
     // gap: 2rem;
 
     @include mobile {
@@ -109,7 +109,7 @@
   }
 
   &__item {
-    width: 28rem;
+    width: 33.5rem;
     margin: 0 auto;
     height: 10rem;
     background: rgba(64, 61, 58, 0.65);
@@ -119,6 +119,7 @@
     padding-right: 0;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     position: relative;
 
 
@@ -135,6 +136,7 @@
     }
 
     &>p {
+
       margin: 0;
       color: #FFF;
       font-family: "Roboto";
@@ -159,26 +161,55 @@
     }
 
     &--sup {
+      padding-right: 1rem;
+
+      &>p {
+        max-width: 21rem;
+      }
+
       &::before {
         background-image: url('./../img/items/01.svg');
       }
     }
 
     &--rel {
+      padding-right: 4.5rem;
+
+      @include mobile {
+        padding-right: 2.8rem;
+      }
+
       &::before {
         background-image: url('./../img/items/02.svg');
       }
     }
 
     &--prot {
+      padding-right: 6.7rem;
+
       &::before {
         background-image: url('./../img/items/03.svg');
       }
     }
 
     &--saf {
+      padding-right: 6.3rem;
+
+      @include mobile {
+        padding-right: 5.3rem;
+      }
+
+      &>p {
+        max-width: 14.1rem;
+
+        @include mobile {
+          max-width: 11.8rem;
+        }
+      }
 
       &::before {
+        width: 8rem;
+        height: 8rem;
         background-image: url('./../img/items/04.svg');
       }
     }

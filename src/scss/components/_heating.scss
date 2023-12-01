@@ -1,6 +1,6 @@
 .heating {
   position: relative;
-  background-color: #403D3A;
+  background-color: #1B1B1B;
   padding-top: 5rem;
   min-height: 100vh;
 
@@ -9,6 +9,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    transform: translateY(-75%);
     width: 100%;
     height: 35.6rem;
     background-image: url('./../img/logo-bg.svg');
@@ -25,6 +26,7 @@
 
   @include mobile {
     background-color: #183475;
+    margin-bottom: 12rem;
   }
 
   .container {
@@ -36,46 +38,59 @@
     z-index: 5;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 
     @include mobile {
-      flex-direction: column;
       margin-bottom: 5.8rem;
     }
   }
 
   &__title {
+    align-items: flex-end;
+    padding-left: 0;
+    max-width: 55rem;
+    font-size: 3.2rem;
+
     &::before {
       content: "Котельная";
+      left: 0;
     }
 
+    margin-bottom: 6.6rem;
+
     @include mobile {
-      margin-bottom: 4rem;
+      // margin-bottom: 4rem;
+      display: none;
     }
   }
 
   &__desc {
     margin: 0;
-    max-width: 40rem;
+    max-width: 96rem;
     color: #FFF;
     font-family: "Roboto";
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @include mobile {
+      font-size: 2.6rem;
+    }
   }
 
   &__video {
     position: absolute;
+    z-index: 4;
     left: 0;
     top: 0;
     height: 100vh;
     width: 100%;
-    clip-path: circle(10% at 25% 75%);
-    will-change: clip-path;
+
 
     @include mobile {
       position: relative;
-      clip-path: unset;
+
       height: 90vh;
     }
 
@@ -99,21 +114,23 @@
 
 .video-block {
   position: absolute;
-  width: 100%;
   height: auto;
-  left: 40%;
+  width: auto;
+  right: 25rem;
 
-  top: 90%;
+  top: 70%;
   will-change: transform;
 
   @include mobile {
-    width: auto;
-    left: 6.7rem;
+    width: 100%;
+    left: 3rem;
+    right: unset;
     top: 0;
   }
 
   &__wrapper {
     flex-direction: column;
+
 
     @include mobile {
       flex-direction: row;
@@ -129,7 +146,6 @@
 
     @include mobile {
       height: auto;
-      max-width: 32rem;
     }
 
     &>p {
@@ -182,5 +198,14 @@
 
   @include mobile {
     display: block;
+  }
+}
+
+.heating-video {
+  clip-path: circle(15% at 25% 75%);
+  will-change: clip-path;
+
+  @include mobile {
+    clip-path: unset;
   }
 }

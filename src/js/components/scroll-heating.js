@@ -8,7 +8,7 @@ function onResize() {
   ScrollTrigger.update();
 }
 
-const heatingVideo = document.querySelector('.heating__video')
+const heatingVideo = document.querySelector('.heating-video')
 if(heatingVideo){
   let mm = gsap.matchMedia()
   mm.add('(min-width: 769px)', () => {
