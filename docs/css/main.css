@@ -190,8 +190,9 @@ a {
 }
 
 .btn {
-  display: inline-block;
   position: relative;
+  overflow: hidden;
+  display: inline-block;
   z-index: 5;
   color: #FFF;
   font-family: "Roboto";
@@ -202,15 +203,35 @@ a {
   padding: 1.5rem;
   padding-bottom: 1.7rem;
   background-color: #294B9B;
-  -webkit-transition: background-color 0.3s ease-in;
-  transition: background-color 0.3s ease-in;
+  -webkit-transition: background-color 0.2s ease-in, color 0.3s ease-in;
+  transition: background-color 0.2s ease-in, color 0.3s ease-in;
   -webkit-box-shadow: 0.8rem 0.6rem 1rem 0rem rgba(0, 0, 0, 0.35);
   box-shadow: 0.8rem 0.6rem 1rem 0rem rgba(0, 0, 0, 0.35);
   width: 34rem;
 }
+.btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-color: #fff;
+  -webkit-transform: translateY(110%);
+  -ms-transform: translateY(110%);
+  transform: translateY(110%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
 @media (any-hover: hover) {
   .btn:hover {
-    background-color: #183475;
+    color: #294B9B;
+    background-color: transparent;
+  }
+  .btn:hover::before {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @media (max-width: 768px) {
@@ -793,17 +814,27 @@ input[type=checkbox] {
   box-shadow: 0.8rem 0.6rem 1rem 0rem rgba(0, 0, 0, 0.35);
   padding: 2rem;
   padding-left: 7.5rem;
-  padding-right: 0;
+  padding-right: 2.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: relative;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+}
+@media (any-hover: hover) {
+  .hero__item:hover {
+    -webkit-animation: moving 2s linear infinite;
+    animation: moving 2s linear infinite;
+  }
 }
 @media (max-width: 768px) {
   .hero__item {
@@ -839,39 +870,17 @@ input[type=checkbox] {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.hero__item--sup {
-  padding-right: 1rem;
-}
 .hero__item--sup > p {
   max-width: 21rem;
 }
 .hero__item--sup::before {
   background-image: url("./../img/items/01.svg");
 }
-.hero__item--rel {
-  padding-right: 4.5rem;
-}
-@media (max-width: 768px) {
-  .hero__item--rel {
-    padding-right: 2.8rem;
-  }
-}
 .hero__item--rel::before {
   background-image: url("./../img/items/02.svg");
 }
-.hero__item--prot {
-  padding-right: 6.7rem;
-}
 .hero__item--prot::before {
   background-image: url("./../img/items/03.svg");
-}
-.hero__item--saf {
-  padding-right: 6.3rem;
-}
-@media (max-width: 768px) {
-  .hero__item--saf {
-    padding-right: 5.3rem;
-  }
 }
 .hero__item--saf > p {
   max-width: 14.1rem;
@@ -887,6 +896,51 @@ input[type=checkbox] {
   background-image: url("./../img/items/04.svg");
 }
 
+@-webkit-keyframes moving {
+  0% {
+    -webkit-transform: translateY(0rem);
+    transform: translateY(0rem);
+  }
+  25% {
+    -webkit-transform: translateY(-0.5rem);
+    transform: translateY(-0.5rem);
+  }
+  50% {
+    -webkit-transform: translateY(0rem);
+    transform: translateY(0rem);
+  }
+  75% {
+    -webkit-transform: translateY(0.5rem);
+    transform: translateY(0.5rem);
+  }
+  100% {
+    -webkit-transform: translateY(0rem);
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes moving {
+  0% {
+    -webkit-transform: translateY(0rem);
+    transform: translateY(0rem);
+  }
+  25% {
+    -webkit-transform: translateY(-0.5rem);
+    transform: translateY(-0.5rem);
+  }
+  50% {
+    -webkit-transform: translateY(0rem);
+    transform: translateY(0rem);
+  }
+  75% {
+    -webkit-transform: translateY(0.5rem);
+    transform: translateY(0.5rem);
+  }
+  100% {
+    -webkit-transform: translateY(0rem);
+    transform: translateY(0rem);
+  }
+}
 .nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1206,12 +1260,30 @@ input[type=checkbox] {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 @media (max-width: 768px) {
   .benefit {
     padding: 0;
     width: 100%;
     height: 100%;
+  }
+}
+@media (any-hover: hover) {
+  .benefit:hover {
+    background-color: #183475;
+  }
+  .benefit:hover svg {
+    fill: none;
+    stroke: #fff;
+  }
+  .benefit:hover p {
+    color: #fff;
+  }
+  .benefit:hover::before {
+    color: rgba(255, 255, 255, 0.5);
   }
 }
 .benefit::before {
@@ -1237,16 +1309,15 @@ input[type=checkbox] {
     right: 0;
   }
 }
-.benefit::after {
-  content: "";
+.benefit svg {
   position: absolute;
   right: 0;
   bottom: 0;
   width: 20rem;
   height: 20rem;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  fill: #fff;
+  -webkit-transition: fill 0.3s ease-in;
+  transition: fill 0.3s ease-in;
 }
 .benefit > p {
   margin: 0 auto;
@@ -1268,6 +1339,20 @@ input[type=checkbox] {
 .benefit--blue {
   background: #183475;
 }
+@media (any-hover: hover) {
+  .benefit--blue:hover {
+    background-color: #fff;
+  }
+  .benefit--blue:hover p {
+    color: #1B1B1B;
+  }
+  .benefit--blue:hover svg {
+    fill: #1b1b1b;
+  }
+  .benefit--blue:hover::before {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
 .benefit--blue::before {
   color: rgba(255, 255, 255, 0.1);
 }
@@ -1276,6 +1361,20 @@ input[type=checkbox] {
 }
 .benefit--dark {
   background: #1B1B1B;
+}
+@media (any-hover: hover) {
+  .benefit--dark:hover {
+    background-color: #fff;
+  }
+  .benefit--dark:hover p {
+    color: #1B1B1B;
+  }
+  .benefit--dark:hover svg {
+    fill: #1b1b1b;
+  }
+  .benefit--dark:hover::before {
+    color: rgba(0, 0, 0, 0.5);
+  }
 }
 .benefit--dark > p {
   max-width: 37rem;
@@ -1292,6 +1391,9 @@ input[type=checkbox] {
 .benefit--2::after {
   background-image: url("./../img/benefits/02.svg");
 }
+.benefit--3 svg {
+  stroke: #183475;
+}
 .benefit--3::after {
   background-image: url("./../img/benefits/03.svg");
 }
@@ -1305,6 +1407,35 @@ input[type=checkbox] {
   background-image: url("./../img/benefits/06.svg");
 }
 
+@-webkit-keyframes jump {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-2rem);
+    transform: translateY(-2rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes jump {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-2rem);
+    transform: translateY(-2rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
 .reliability {
   padding-top: 17rem;
   padding-bottom: 16rem;
@@ -2039,6 +2170,10 @@ input[type=checkbox] {
   position: absolute;
   z-index: 5;
   inset: 0;
+  background-color: unset;
+  -webkit-transform: unset;
+  -ms-transform: unset;
+  transform: unset;
 }
 @media (max-width: 768px) {
   .rent-item__btn {
@@ -2059,6 +2194,7 @@ input[type=checkbox] {
 }
 .rent-item:hover .rent-item__btn {
   background-color: #294B9B;
+  color: #fff !important;
 }
 
 .compos {

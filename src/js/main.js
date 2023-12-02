@@ -88,7 +88,7 @@ if(video){
 
 
 
-const formButtons = document.querySelectorAll('[data-form-btn]')
+const formButtons = document.querySelectorAll('[data-form-btn], .rent__item')
 formButtons.forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.preventDefault()

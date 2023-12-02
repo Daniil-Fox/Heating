@@ -124,8 +124,9 @@ a {
 }
 
 .btn {
-  display: inline-block;
   position: relative;
+  overflow: hidden;
+  display: inline-block;
   z-index: 5;
   color: #FFF;
   font-family: "Roboto";
@@ -137,12 +138,27 @@ a {
   padding: 1.5rem;
   padding-bottom: 1.7rem;
   background-color: #294B9B;
-  transition: background-color .3s ease-in;
+  transition: background-color .2s ease-in, color .3s ease-in;
   box-shadow: 0.8rem 0.6rem 1rem 0rem rgba(0, 0, 0, 0.35);
   width: 34rem;
 
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-color: #fff;
+    transform: translateY(110%);
+    transition: transform .3s ease-out;
+  }
+
   @include hover {
-    background-color: #183475;
+    color: #294B9B;
+    background-color: transparent;
+
+    &::before {
+      transform: translateY(0);
+    }
   }
 
   @include mobile {

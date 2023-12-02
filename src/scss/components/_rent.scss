@@ -147,6 +147,8 @@
       position: absolute;
       z-index: 5;
       inset: 0;
+      background-color: unset;
+      transform: unset;
     }
 
     @include mobile {
@@ -157,6 +159,7 @@
 
   &:hover {
     background: #183475;
+
 
     .rent-item__item {
       color: #fff;
@@ -172,6 +175,7 @@
 
     .rent-item__btn {
       background-color: #294B9B;
+      color: #fff !important;
     }
   }
 }

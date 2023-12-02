@@ -116,12 +116,16 @@
     box-shadow: 0.8rem 0.6rem 1rem 0rem rgba(0, 0, 0, 0.35);
     padding: 2rem;
     padding-left: 7.5rem;
-    padding-right: 0;
+    padding-right: 2.6rem;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     position: relative;
+    transition: transform .3s ease-in;
 
+    @include hover {
+      animation: moving 2s linear infinite;
+    }
 
 
     @include mobile {
@@ -161,7 +165,6 @@
     }
 
     &--sup {
-      padding-right: 1rem;
 
       &>p {
         max-width: 21rem;
@@ -173,11 +176,6 @@
     }
 
     &--rel {
-      padding-right: 4.5rem;
-
-      @include mobile {
-        padding-right: 2.8rem;
-      }
 
       &::before {
         background-image: url('./../img/items/02.svg');
@@ -185,7 +183,6 @@
     }
 
     &--prot {
-      padding-right: 6.7rem;
 
       &::before {
         background-image: url('./../img/items/03.svg');
@@ -193,11 +190,7 @@
     }
 
     &--saf {
-      padding-right: 6.3rem;
 
-      @include mobile {
-        padding-right: 5.3rem;
-      }
 
       &>p {
         max-width: 14.1rem;
@@ -213,5 +206,27 @@
         background-image: url('./../img/items/04.svg');
       }
     }
+  }
+}
+
+@keyframes moving {
+  0% {
+    transform: translateY(0rem);
+  }
+
+  25% {
+    transform: translateY(-0.5rem);
+  }
+
+  50% {
+    transform: translateY(0rem);
+  }
+
+  75% {
+    transform: translateY(0.5rem);
+  }
+
+  100% {
+    transform: translateY(0rem);
   }
 }

@@ -222,11 +222,32 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
+  transition: background-color .3s ease;
 
   @include mobile {
     padding: 0;
     width: 100%;
     height: 100%;
+  }
+
+  @include hover {
+    svg {
+      fill: none;
+      stroke: #fff;
+    }
+
+    p {
+      color: #fff;
+    }
+
+    &::before {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    background-color: #183475;
+
+    &::after {}
   }
 
   &::before {
@@ -252,18 +273,27 @@
     }
   }
 
-  &::after {
-    content: "";
+  svg {
     position: absolute;
     right: 0;
     bottom: 0;
     width: 20rem;
     height: 20rem;
+    fill: #fff;
 
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    transition: fill .3s ease-in;
   }
+
+  // &::after {
+  //   content: "";
+
+
+  //   background-position: center center;
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+
+  //   transition: transform .3s ease-in;
+  // }
 
   &>p {
     margin: 0 auto;
@@ -276,6 +306,7 @@
     color: #403D3A;
     max-width: 39.4rem;
 
+
     @include mobile {
       padding: 3.853rem;
       padding-left: 3.4rem;
@@ -285,6 +316,22 @@
 
   &--blue {
     background: #183475;
+
+    @include hover {
+      background-color: #fff;
+
+      p {
+        color: #1B1B1B;
+      }
+
+      svg {
+        fill: #1b1b1b;
+      }
+
+      &::before {
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
 
     &::before {
       color: rgba(255, 255, 255, 0.1);
@@ -297,6 +344,22 @@
 
   &--dark {
     background: #1B1B1B;
+
+    @include hover {
+      background-color: #fff;
+
+      p {
+        color: #1B1B1B;
+      }
+
+      svg {
+        fill: #1b1b1b;
+      }
+
+      &::before {
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
 
     &>p {
       max-width: 37rem;
@@ -326,6 +389,10 @@
   }
 
   &--3 {
+    svg {
+      stroke: #183475;
+    }
+
     &::after {
       background-image: url('./../img/benefits/03.svg');
     }
@@ -347,5 +414,19 @@
     &::after {
       background-image: url('./../img/benefits/06.svg');
     }
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2rem);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
